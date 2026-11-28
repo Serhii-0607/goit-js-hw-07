@@ -26,11 +26,10 @@ const images = [
 ];
 
 const gallery = document.querySelector('.gallery');
-
+let pictures = ``;
 for (let i = 0; i < images.length; i++) {
-  gallery.insertAdjacentHTML(
-    'beforeend',
-    `
-      <li class="gallery-item"><img class="gallery-img" src=${images[i].url} alt=${images[i].alt} width="360" height="300"></li>`
-  );
+  pictures += `<li class="gallery-item"><img class="gallery-img" src="${images[i].url}" alt="${images[i].alt}" width="360" height="300"></li>`;
 }
+console.log(pictures);
+
+gallery.insertAdjacentHTML('beforeend', `${pictures}`);
